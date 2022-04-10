@@ -64,7 +64,6 @@ void insertMap(HashMap * map, char * key, void * value) {
     if (hach >= map->capacity) hach = 0;
   }
 }
-}
 
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
