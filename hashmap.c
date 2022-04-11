@@ -43,15 +43,16 @@ void insertMap(HashMap * map, char * key, void * value) {
   long hach = hash(key, map->capacity);
 
   if (map->buckets[hach] == NULL){
-    strcpy(map->buckets[hach]->key,key);
-    map->buckets[hach]->value = value;
-    map->current = hach;
-    map->size++;
+      map->buckets[hach]->key = calloc(14, sizeof(Pair));
+      strcpy(map->buckets[hach]->key,key);
+      map->buckets[hach]->value = value;
+      map->current = hach;
+      map->size++;
   }
 
   while (map->buckets[hach] != NULL){
 
-    if (strcmp(key, map->buckets[hach]->key) == 0) return exit(1);
+    if (strcmp(key, map->buckets[hach]->key) == 0) return;
 
     if (map->buckets[hach] == NULL){
        strcpy(map->buckets[hach]->key,key);
