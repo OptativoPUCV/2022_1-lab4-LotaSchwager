@@ -100,16 +100,13 @@ void eraseMap(HashMap * map,  char * key) {
     }
   }
 
-  while (map->buckets[position] == NULL){
-    position++;
-    if (position == map->capacity) position = 0;
-    
+  for (long i = 0; i < map->capacity; i++){
     if (map->buckets[position] != NULL){
       if (is_equal(key,map->buckets[position]->key) == 1){
-            map->buckets[position]->key = NULL;
-            map->size--;
-            return;
-      } 
+        map->buckets[position]->key == NULL;
+        map->size--;
+        return;
+      }
     }
   }
 }
