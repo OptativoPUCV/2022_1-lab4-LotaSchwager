@@ -135,4 +135,5 @@ Pair * nextMap(HashMap * map) {
   }
   map->current = contador;
   return map->buckets[contador];*/
+  return NULL;
 }
