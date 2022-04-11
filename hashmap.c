@@ -127,7 +127,7 @@ Pair * nextMap(HashMap * map) {
   long contador;
   contador = map->current;
 
-  if (contador == map->capacity-1){
+  if (map->current == map->capacity){
     return NULL;
   } 
 
