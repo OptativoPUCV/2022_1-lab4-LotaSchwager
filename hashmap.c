@@ -53,8 +53,6 @@ void insertMap(HashMap * map, char * key, void * value) {
     if (hach == map->capacity) hach = 0;
     
     if (map->buckets[hach] == NULL){
-
-      if (is_equal(key, map->buckets[hach]->key) != 1){
         if (map->buckets[hach + 1]->key == NULL || map->buckets[hach - 1]->key == NULL){
             map->buckets[hach] = createPair(key, value);
             map->current = hach;
@@ -65,7 +63,6 @@ void insertMap(HashMap * map, char * key, void * value) {
     }
      
   }
-}
 
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
