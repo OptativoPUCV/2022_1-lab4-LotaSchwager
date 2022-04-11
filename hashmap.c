@@ -51,7 +51,7 @@ void insertMap(HashMap * map, char * key, void * value) {
 
   while (map->buckets[hach] != NULL){
 
-    if (strcmp(key, map->buckets[hach]->key) == 0) return;
+    if (is_equal(key,map->buckets[position]->key) != 0) return;
 
     if (map->buckets[hach] == NULL){
       map->buckets[hach] = createPair(key, value);
@@ -90,8 +90,7 @@ HashMap * createMap(long capacity) {
 
 void eraseMap(HashMap * map,  char * key) {
   for (long i = 0; i < map->capacity; i++){
-    if (strcmp(map->buckets[i]->key, key) == 0){
-
+    if (is_equal(key,map->buckets[position]->key) != 0){
       map->buckets[i]->key = NULL;
     }
   }
