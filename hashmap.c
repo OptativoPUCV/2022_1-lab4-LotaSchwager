@@ -48,6 +48,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     map->size++;
     return;
   }
+  
   while (map->buckets[hach] != NULL){
     hach++;
     if (hach == map->capacity) hach = 0;
@@ -95,6 +96,20 @@ void eraseMap(HashMap * map,  char * key) {
     if (is_equal(key,map->buckets[position]->key) == 1){
         map->buckets[position]->key = NULL;
         map->size--;
+        return;
+    }
+  }
+
+  while (map->buckets[position] == NULL){
+    position++;
+    if (position == map->capacity) position = 0;
+    
+    if (map->buckets[position] != NULL){
+      if (is_equal(key,map->buckets[position]->key) == 1){
+            map->buckets[position]->key = NULL;
+            map->size--;
+            return;
+      } 
     }
   }
 }
