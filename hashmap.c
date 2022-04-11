@@ -89,9 +89,14 @@ HashMap * createMap(long capacity) {
   return table;
 }
 
-void eraseMap(HashMap * map,  char * key) {    
+void eraseMap(HashMap * map,  char * key) {
+  for (long i = 0; i < map->capacity; i++){
+    if (strcmp(map->buckets[i]->key, key) == 0){
 
-
+      map->buckets[i]->key = NULL;
+    }
+  }
+  map->size -=1;
 }
 
 Pair * searchMap(HashMap * map,  char * key) {   
