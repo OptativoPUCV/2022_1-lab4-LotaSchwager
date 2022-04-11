@@ -58,8 +58,8 @@ void insertMap(HashMap * map, char * key, void * value) {
            return;
         }
     }
-    if (hach == map->capacity - 1) hach = 0;
     hach++;
+    if (hach == map->capacity - 1) hach = 0; 
   }
 }
 
