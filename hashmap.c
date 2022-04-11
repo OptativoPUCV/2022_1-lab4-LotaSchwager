@@ -43,9 +43,7 @@ void insertMap(HashMap * map, char * key, void * value) {
   long hach = hash(key, map->capacity);
 
   if (map->buckets[hach] == NULL){
-      map->buckets[hach]->key = calloc(14, sizeof(Pair));
-      strcpy(map->buckets[hach]->key,key);
-      map->buckets[hach]->value = value;
+      map->buckets[hach] = createPair(key, value);
       map->current = hach;
       map->size++;
   }
@@ -55,10 +53,9 @@ void insertMap(HashMap * map, char * key, void * value) {
     if (strcmp(key, map->buckets[hach]->key) == 0) return;
 
     if (map->buckets[hach] == NULL){
-       strcpy(map->buckets[hach]->key,key);
-       map->buckets[hach]->value = value;
-       map->size++;
+       map->buckets[hach] = createPair(key, value);
        map->current = hach;
+       map->size++;
     }
 
     hach++;
