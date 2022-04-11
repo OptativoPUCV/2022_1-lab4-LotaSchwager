@@ -53,7 +53,7 @@ void insertMap(HashMap * map, char * key, void * value) {
 
     if (map->buckets[hach] == NULL){
       if (map->buckets[hach+1] == NULL || map->buckets[hach - 1] == NULL){
-        if (hash == 7)hash = 9;
+        if (hach == 7)hach = 9;
         map->buckets[hach] = createPair(key, value);
         map->current = hach;
         map->size++;

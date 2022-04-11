@@ -176,3 +176,8 @@ hashmap.c:56:28: error: lvalue required as left operand of assignment
 cc1: all warnings being treated as errors
 Compilation failed
 6c5389d
+Mon Apr 11 01:37:11 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+82b81d4
