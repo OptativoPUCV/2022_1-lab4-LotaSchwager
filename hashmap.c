@@ -91,12 +91,7 @@ HashMap * createMap(long capacity) {
 }
 
 void eraseMap(HashMap * map,  char * key) {
-  for (long i = 0; i < map->capacity; i++){
-    if (is_equal(key,map->buckets[i]->key) == 1){
-      map->buckets[i] = NULL;
-    }
-  }
-  map->size -=1;
+  
 }
 
 Pair * searchMap(HashMap * map,  char * key){
