@@ -97,7 +97,16 @@ void eraseMap(HashMap * map,  char * key) {
         map->size--;
     }
   }
-  
+
+  while (map->buckets[position] != NULL){
+     position ++;
+     if (position == map->capacity) position = 0;
+
+    if (is_equal(key, map->buckets[position]->key) == 1){
+        map->buckets[position]->key = NULL;
+        map->size--;
+    }
+  }
 }
 
 Pair * searchMap(HashMap * map,  char * key){
@@ -132,6 +141,7 @@ Pair * firstMap(HashMap * map) {
 Pair * nextMap(HashMap * map) {
   long contador;
   contador = map->current;
+  contador = (contador+1)%map->capacity;
 
   if (map->current == map->capacity){
     return NULL;
