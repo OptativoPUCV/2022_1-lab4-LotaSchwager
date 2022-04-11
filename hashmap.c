@@ -51,12 +51,15 @@ void insertMap(HashMap * map, char * key, void * value) {
   while (map->buckets[hach] != NULL){
     
     if (map->buckets[hach] == NULL){
+
+      if (is_equal(key, map->buckets[hach]->key) != 1){
         if (map->buckets[hach + 1]->key == NULL || map->buckets[hach - 1]->key == NULL){
-           map->buckets[hach] = createPair(key, value);
-           map->current = hach;
-           map->size++;
-           return;
+            map->buckets[hach] = createPair(key, value);
+            map->current = hach;
+            map->size++;
+            return;
         }
+      }
     }
     hach++;
     if (hach == map->capacity - 1) hach = 0; 
