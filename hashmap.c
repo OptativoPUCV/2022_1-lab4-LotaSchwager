@@ -3,7 +3,9 @@
 #include <string.h>
 #include <math.h>
 #include <ctype.h>
+#include <stdbool>
 #include "hashmap.h"
+
 
 
 typedef struct HashMap HashMap;
@@ -54,12 +56,10 @@ void insertMap(HashMap * map, char * key, void * value) {
     if (hach >= map->capacity) hach = 0;
     
     if (map->buckets[hach] == NULL){
-        if (map->buckets[hach + 1] == NULL || map->buckets[hach - 1] == NULL){
             map->buckets[hach] = createPair(key, value);
             map->current = hach;
             map->size++;
             return;
-        }
       }
     }
      

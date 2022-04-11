@@ -434,3 +434,13 @@ Mon Apr 11 03:23:40 UTC 2022:
  tests:  15|2
 total_score: 50/70
 2ad27ee
+Mon Apr 11 03:29:48 UTC 2022: 
+ hashmap.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+In file included from test.c:4:0:
+hashmap.c:6:10: fatal error: stdbool: No such file or directory
+ #include <stdbool>
+          ^~~~~~~~~
+compilation terminated.
+Compilation failed
+3f0ea64
