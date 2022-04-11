@@ -133,7 +133,7 @@ Pair * nextMap(HashMap * map) {
   contador = map->current;
   contador = (contador+1)%map->capacity;
 
-  if (map->current == map->capacity || contador == 0){
+  if (map->current == map->capacity){
     return NULL;
   } 
 
@@ -141,6 +141,8 @@ Pair * nextMap(HashMap * map) {
 
     contador = (contador+1)%map->capacity;
   }
+
+  if (contador == 0) return NULL;
   map->current = contador;
   return map->buckets[contador];
 }
