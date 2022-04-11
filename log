@@ -353,3 +353,13 @@ Mon Apr 11 02:54:44 UTC 2022:
  tests:  12|4
 total_score: 30/70
 4920c0c
+Mon Apr 11 02:57:22 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:136:49: error: lvalue required as left operand of assignment
+   if (map->current == map->capacity || contador = 0){
+                                                 ^
+Compilation failed
+6badb9c
