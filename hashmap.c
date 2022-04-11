@@ -59,8 +59,8 @@ void insertMap(HashMap * map, char * key, void * value) {
       map->size++;
       return;
     }
-    hach++;
     if (hach >= map->capacity) hach = 0;
+    hach++;
   }
 }
 
@@ -98,15 +98,31 @@ void eraseMap(HashMap * map,  char * key) {
   map->size -=1;
 }
 
-Pair * searchMap(HashMap * map,  char * key) {   
+Pair * searchMap(HashMap * map,  char * key) {
+  long position = hash (key, map->capacity);
 
+  while (map->buckets[position] != NULL){
 
-    return NULL;
+    if (is_equal(key,map->buckets[position]->key) != 0){
+      return map->buckets[position];
+    }
+
+    if (position >= map->capacity{
+
+      position = 0;
+    }else position++;
+  }
 }
 
 Pair * firstMap(HashMap * map) {
+  long contador = 0;
 
-    return NULL;
+  while (map->buckets[contador] == NULL || map->buckets[contador]->key == NULL){
+
+    contador = (contador+1)%map->capacity;
+  }
+  map->current = contador;
+  return map->buckets[contador];
 }
 
 Pair * nextMap(HashMap * map) {
