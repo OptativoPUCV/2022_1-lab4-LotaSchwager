@@ -363,3 +363,9 @@ hashmap.c:136:49: error: lvalue required as left operand of assignment
                                                  ^
 Compilation failed
 6badb9c
+Mon Apr 11 02:57:30 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  12|4
+total_score: 30/70
+3afe877
