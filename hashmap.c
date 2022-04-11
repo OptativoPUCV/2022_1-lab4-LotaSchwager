@@ -49,6 +49,8 @@ void insertMap(HashMap * map, char * key, void * value) {
     return;
   }
   while (map->buckets[hach] != NULL){
+    hach++;
+    if (hach == map->capacity) hach = 0;
     
     if (map->buckets[hach] == NULL){
 
@@ -61,8 +63,7 @@ void insertMap(HashMap * map, char * key, void * value) {
         }
       }
     }
-    hach++;
-    if (hach == map->capacity) hach = 0; 
+     
   }
 }
 
