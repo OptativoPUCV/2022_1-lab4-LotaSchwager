@@ -136,3 +136,14 @@ hashmap.c:93:35: error: ‘position’ undeclared (first use in this function)
                                    ^~~~~~~~
 Compilation failed
 309310b
+Mon Apr 11 00:52:14 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:54:35: error: ‘position’ undeclared (first use in this function)
+     if (is_equal(key,map->buckets[position]->key) != 0) return;
+                                   ^~~~~~~~
+hashmap.c:54:35: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+4bc0a7b
