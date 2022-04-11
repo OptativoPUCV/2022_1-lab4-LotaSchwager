@@ -125,6 +125,14 @@ Pair * firstMap(HashMap * map) {
 }
 
 Pair * nextMap(HashMap * map) {
+  /*long contador = map->current;
 
-    return NULL;
+  if (contador == map->capacity-1) return NULL;
+
+  while (map->buckets[contador] == NULL || map->buckets[contador]->key){
+
+    contador = (contador+1)%map->capacity;
+  }
+  map->current = contador;
+  return map->buckets[contador];*/
 }
