@@ -450,3 +450,14 @@ Mon Apr 11 03:29:56 UTC 2022:
  tests:  16|1
 total_score: 60/70
 6f3ff6b
+Mon Apr 11 03:46:19 UTC 2022: 
+ hashmap.c | 15 ++++++++++++++-
+ 1 file changed, 14 insertions(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:68:16: error: initialization from incompatible pointer type [-Werror=incompatible-pointer-types]
+   Pair** aux = (Pair*) calloc (map->capacity, sizeof(Pair*));
+                ^
+cc1: all warnings being treated as errors
+Compilation failed
+cce118a
