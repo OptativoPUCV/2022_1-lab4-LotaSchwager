@@ -162,3 +162,17 @@ Mon Apr 11 01:32:23 UTC 2022:
  1 file changed, 3 insertions(+), 3 deletions(-)
  tests:  0|0
 7081525
+Mon Apr 11 01:36:42 UTC 2022: 
+ hashmap.c | 1 +
+ 1 file changed, 1 insertion(+)
+In file included from test.c:4:0:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:56:18: error: comparison between pointer and integer [-Werror]
+         if (hash == 7)hash = 9;
+                  ^~
+hashmap.c:56:28: error: lvalue required as left operand of assignment
+         if (hash == 7)hash = 9;
+                            ^
+cc1: all warnings being treated as errors
+Compilation failed
+6c5389d
